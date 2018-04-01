@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 var PlayersList = ["Foodie"]
 
 class LoginViewController: UIViewController {
+    
+    var ref : DatabaseReference!
     
     @IBOutlet weak var UsernameTextField: UITextField!
     @IBOutlet weak var EmailAddressTextField: UITextField!
@@ -20,6 +24,9 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        ref = Database.database().reference()
+        
+        self.ref.child("Pets").childByAutoId().setValue("Dogs")
         // Do any additional setup after loading the view.
     }
 
