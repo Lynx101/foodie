@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		848900B8206EDD3500024FCD /* GroceriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848900B7206EDD3500024FCD /* GroceriesViewController.swift */; };
-		848900BA206FE61B00024FCD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 848900B9206FE61B00024FCD /* GoogleService-Info.plist */; };
+		8496F5DD2071625C001E2656 /* GoogleService-Info (2).plist in Resources */ = {isa = PBXBuildFile; fileRef = 8496F5DB2071625C001E2656 /* GoogleService-Info (2).plist */; };
 		84A9765D206C750400D6809E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A9765C206C750400D6809E /* AppDelegate.swift */; };
 		84A9765F206C750400D6809E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A9765E206C750400D6809E /* FirstViewController.swift */; };
 		84A97661206C750400D6809E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A97660206C750400D6809E /* SecondViewController.swift */; };
@@ -26,7 +26,7 @@
 		84070B8B20701DB5001414B8 /* Foodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8415A15C20704D9200756D58 /* en */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = en; path = ../en.lproj/FoodAvoidanceViewController.swift; sourceTree = "<group>"; };
 		848900B7206EDD3500024FCD /* GroceriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GroceriesViewController.swift; path = ../GroceriesViewController.swift; sourceTree = "<group>"; };
-		848900B9206FE61B00024FCD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8496F5DC2071625C001E2656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = "GoogleService-Info (2).plist"; sourceTree = "<group>"; };
 		84A9765C206C750400D6809E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		84A9765E206C750400D6809E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = ../FirstViewController.swift; sourceTree = "<group>"; };
 		84A97660206C750400D6809E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = ../SecondViewController.swift; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 				84A9769A206D935E00D6809E /* AddRecipeViewController.swift */,
 				84A97672206C812400D6809E /* TakePhotoViewController.swift */,
 				84A97667206C750400D6809E /* LaunchScreen.storyboard */,
-				848900B9206FE61B00024FCD /* GoogleService-Info.plist */,
+				8496F5DB2071625C001E2656 /* GoogleService-Info (2).plist */,
 			);
 			name = Foodie;
 			path = Base.lproj;
@@ -142,8 +142,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8496F5DD2071625C001E2656 /* GoogleService-Info (2).plist in Resources */,
 				84A97669206C750400D6809E /* LaunchScreen.storyboard in Resources */,
-				848900BA206FE61B00024FCD /* GoogleService-Info.plist in Resources */,
 				84A97666206C750400D6809E /* Assets.xcassets in Resources */,
 				84A97664206C750400D6809E /* Main.storyboard in Resources */,
 			);
@@ -177,6 +177,14 @@
 				8415A15C20704D9200756D58 /* en */,
 			);
 			name = FoodAvoidanceViewController.swift;
+			sourceTree = "<group>";
+		};
+		8496F5DB2071625C001E2656 /* GoogleService-Info (2).plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8496F5DC2071625C001E2656 /* Base */,
+			);
+			name = "GoogleService-Info (2).plist";
 			sourceTree = "<group>";
 		};
 		84A97662206C750400D6809E /* Main.storyboard */ = {
