@@ -11,6 +11,7 @@ import UIKit
 var RecipeName = ""
 
 class AddRecipeNameViewController: UIViewController, UITextFieldDelegate {
+    
 
     @IBOutlet weak var NextButton: UIBarButtonItem!
     @IBOutlet weak var RecipeText: UILabel!
@@ -33,6 +34,8 @@ class AddRecipeNameViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+
     
 
     /*

@@ -13,12 +13,18 @@ var GroceriesList:[String] = []
 
 class GroceriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
+    
     @IBOutlet weak var GroceriesTextField: UITextField!
     @IBOutlet weak var MyTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return GroceriesList.count
+        if GroceriesList.count <= 5
+        {
+            return GroceriesList.count
+        }
+        
+        return 5
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
@@ -38,6 +44,10 @@ class GroceriesViewController: UIViewController, UITableViewDelegate, UITableVie
     {
         if editingStyle == UITableViewCellEditingStyle.delete
         {
+            var Item = GroceriesList[indexPath.row]
+
+            ref.child("Users").child(UserUID!).child("Groceries List").child(Item).removeValue()
+            
             GroceriesList.remove(at: indexPath.row)
             MyTableView.reloadData()
         }
@@ -63,15 +73,37 @@ class GroceriesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
-        if GroceriesTextField.text != ""
+        if GroceriesTextField.text?.isEmpty == false
         {
-            GroceriesTextField.resignFirstResponder()
-            GroceriesList.append(GroceriesTextField.text!)
-            GroceriesTextField.text = ""
+            var number = 0
             
-            MyTableView.reloadData()
+            for chr in GroceriesTextField.text!
+            {
+                if (!(chr >= "a" && chr <= "z") && !(chr >= "A" && chr <= "Z") && !(chr == " ") )
+                {
+                    number += 1
+                    
+                } else
+                {
+                    
+                }
+            }
             
-            return (true)
+            if number >= 1
+            {
+
+            } else
+            {
+                ref.child("Users").child(UserUID!).child("Groceries List").child(GroceriesTextField.text!).setValue("")
+                
+                GroceriesTextField.resignFirstResponder()
+                GroceriesList.append(GroceriesTextField.text!)
+                GroceriesTextField.text = ""
+                
+                MyTableView.reloadData()
+                
+                return (true)
+            }
         }
         
         return (false)

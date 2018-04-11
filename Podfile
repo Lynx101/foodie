@@ -9,5 +9,14 @@ target 'Foodie' do
 
 	pod 'Firebase/Core'
     pod 'Firebase/Database'
+    pod 'Firebase/Firestore'
+    
+    pod 'Firebase/Auth'
+    
+    pod 'FirebaseUI'
+    
+    pod 'FirebaseUI/Auth'
+    
+    pod 'FirebaseUI/Google'
 
 end

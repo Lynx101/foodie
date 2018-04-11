@@ -8,31 +8,31 @@
 
 import UIKit
 import Firebase
-import FirebaseDatabase
+import FirebaseAuth
 
-var PlayersList = ["Foodie"]
+var ref: DatabaseReference!
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
-    var ref : DatabaseReference!
+    @IBOutlet weak var EmailTF: UITextField!
+    @IBOutlet weak var PasswordTF: UITextField!
     
-    @IBOutlet weak var UsernameTextField: UITextField!
-    @IBOutlet weak var EmailAddressTextField: UITextField!
-    @IBOutlet weak var CookinExperience: UILabel!
-    @IBOutlet weak var AgeLabel: UILabel!
+    @IBOutlet weak var NextBtn: UIButton!
+    @IBOutlet weak var VerifyBtn: UIButton!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
+        
         super.viewDidLoad()
+        
+        self.EmailTF.delegate = self
+        self.PasswordTF.delegate = self
 
         ref = Database.database().reference()
-        
-        self.ref.child("Pets").childByAutoId().setValue("Dogs")
-        // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override var prefersStatusBarHidden: Bool
@@ -40,15 +40,59 @@ class LoginViewController: UIViewController {
         return (true)
     }
     
-    @IBAction func Age(_ sender: UISlider)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
-        AgeLabel.text = String(((Int)((sender.value + 0.5) / 1) * 1))
-        sender.setValue((Float)((Int)((sender.value + 0.5) / 1) * 1), animated: false)
+        self.view.endEditing(true)
     }
     
-    @IBAction func LevelInCooking(_ sender: UISlider)
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
-        CookinExperience.text = String((((Int)((sender.value + 0.5) / 1) * 1)))
-        sender.setValue((Float)((Int)((sender.value + 0.5) / 1) * 1), animated: false)
+        EmailTF.resignFirstResponder()
+        PasswordTF.resignFirstResponder()
+        
+        return true
+    }
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        if Auth.auth().currentUser != nil {
+            
+            performSegue(withIdentifier: "Segue", sender: nil)
+            print("Sogn In")
+            
+        } else
+        {
+            print("Signed Out")
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    @IBAction func SignInVerify(_ sender: Any)
+    {
+        Auth.auth().signIn(withEmail: self.EmailTF.text!, password: self.PasswordTF.text!) { (User, Error) in
+            if User != nil
+            {
+                UserUID = Auth.auth().currentUser?.uid
+                
+                ref.child("Users").child(UserUID!).child("Account").child("Password").setValue(self.PasswordTF.text!)
+                
+                self.PasswordTF.isEnabled = false
+                self.EmailTF.isEnabled = false
+                
+                self.VerifyBtn.isEnabled = false
+                self.NextBtn.isEnabled = true
+            }
+            
+            if Error != nil
+            {
+                print(Error?.localizedDescription as! String)
+            }
+        }
     }
 }
