@@ -25,8 +25,6 @@ class SecondViewController: UIViewController {
         UserEmailLbl.text = UserEmail
         UserAgeLbl.text = UserAge
         UserExperienceLbl.text = UserExperience
-        
-        
     }
 
     override func didReceiveMemoryWarning() {

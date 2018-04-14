@@ -127,7 +127,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 
                 UserUID = User?.uid
 
-                ref.child("Users").child(UserUID!).child("Account").setValue(["Username": UserName, "Email" : UserEmail, "Password" : UserPassword, "Age" : UserAge, "Experience" : UserExperience])
+                ref.child("Users").child(UserUID!).child("Account").setValue(["Username": UserName, "Email" : UserEmail, "Age" : UserAge, "Experience" : UserExperience])
                 
                 self.VerifyBtn.isEnabled = false
                 self.NextBtn.isEnabled = true

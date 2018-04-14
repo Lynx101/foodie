@@ -9,22 +9,26 @@
 
 import UIKit
 
+var cell : UITableViewCell = UITableViewCell()
+
 var GroceriesList:[String] = []
+var HeaderCell : [Int] = []
 
 class GroceriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
+    @IBOutlet weak var EditButton: UIButton!
     
     @IBOutlet weak var GroceriesTextField: UITextField!
     @IBOutlet weak var MyTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        if GroceriesList.count <= 5
+        if GroceriesList.count <= 500
         {
             return GroceriesList.count
         }
         
-        return 5
+        return 500
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
@@ -32,10 +36,33 @@ class GroceriesViewController: UIViewController, UITableViewDelegate, UITableVie
         self.view.endEditing(true)
     }
     
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool
+    {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath)
+    {
+        let item = GroceriesList[sourceIndexPath.row]
+        GroceriesList.remove(at: sourceIndexPath.row)
+        GroceriesList.insert(item, at: destinationIndexPath.row)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+        cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "cell")
+        
         cell.textLabel?.text = GroceriesList[indexPath.row]
+        
+        cell.tag = indexPath.row
+        
+        print(indexPath.row)
+        
+        if HeaderCell.contains(indexPath.row)
+        {
+            cell.backgroundColor = UIColor.black
+            cell.textLabel?.textColor = UIColor.white
+        }
         
         return (cell)
     }
@@ -49,9 +76,19 @@ class GroceriesViewController: UIViewController, UITableViewDelegate, UITableVie
             ref.child("Users").child(UserUID!).child("Groceries List").child(Item).removeValue()
             
             GroceriesList.remove(at: indexPath.row)
+            HeaderCell.remove(at: indexPath.row)
             MyTableView.reloadData()
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        print(GroceriesList[indexPath.row])
+        
+        performSegue(withIdentifier: "SegueGroceryToChange", sender: nil)
+    }
+    
+    
     
     override var prefersStatusBarHidden: Bool
     {
@@ -109,5 +146,21 @@ class GroceriesViewController: UIViewController, UITableViewDelegate, UITableVie
         return (false)
     }
     
+    
+    
+    @IBAction func Edit(_ sender: Any)
+    {
+        MyTableView.isEditing = !MyTableView.isEditing
+        
+        switch MyTableView.isEditing {
+        case true:
+            EditButton.setTitle("Done", for: .normal)
+        default:
+            EditButton.setTitle("Edit", for: .normal)
+        }
+        
+        
+    }
 
 }
+

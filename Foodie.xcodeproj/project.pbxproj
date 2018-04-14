@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		84356CE2207B183D00BCFD89 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84356CE1207B183D00BCFD89 /* SignUpViewController.swift */; };
+		84393A71207EB675001679A3 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84393A6F207EB675001679A3 /* PostTableViewCell.swift */; };
+		84393A72207EB675001679A3 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84393A70207EB675001679A3 /* PostTableViewCell.xib */; };
+		84393A7720801371001679A3 /* ChangeToHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84393A7620801371001679A3 /* ChangeToHeaderViewController.swift */; };
 		8469EFA5207C1D70001AFD80 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469EFA4207C1D70001AFD80 /* ScanViewController.swift */; };
 		8469EFA7207C1E72001AFD80 /* PantryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469EFA6207C1E72001AFD80 /* PantryViewController.swift */; };
 		848900B8206EDD3500024FCD /* GroceriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848900B7206EDD3500024FCD /* GroceriesViewController.swift */; };
@@ -23,6 +26,8 @@
 		84A97677206D687900D6809E /* AddIngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A97676206D687900D6809E /* AddIngredientsViewController.swift */; };
 		84A9769B206D935E00D6809E /* AddRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A9769A206D935E00D6809E /* AddRecipeViewController.swift */; };
 		84E1E0EC206E90FB00E67EE1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E1E0EB206E90FB00E67EE1 /* LoginViewController.swift */; };
+		84EF613F20817C8700A88C55 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF613E20817C8700A88C55 /* Post.swift */; };
+		84EF61412081916800A88C55 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF61402081916800A88C55 /* UserProfile.swift */; };
 		9D68BCC4D01E2BC080271696 /* Pods_Foodie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E51FB759E3840C0EB575EE7 /* Pods_Foodie.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +35,9 @@
 		6E51FB759E3840C0EB575EE7 /* Pods_Foodie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foodie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84070B8B20701DB5001414B8 /* Foodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84356CE1207B183D00BCFD89 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		84393A6F207EB675001679A3 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		84393A70207EB675001679A3 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		84393A7620801371001679A3 /* ChangeToHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeToHeaderViewController.swift; sourceTree = "<group>"; };
 		8469EFA4207C1D70001AFD80 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		8469EFA6207C1E72001AFD80 /* PantryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryViewController.swift; sourceTree = "<group>"; };
 		848900B7206EDD3500024FCD /* GroceriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GroceriesViewController.swift; path = ../GroceriesViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +54,8 @@
 		84A97676206D687900D6809E /* AddIngredientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddIngredientsViewController.swift; path = ../AddIngredientsViewController.swift; sourceTree = "<group>"; };
 		84A9769A206D935E00D6809E /* AddRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddRecipeViewController.swift; path = ../AddRecipeViewController.swift; sourceTree = "<group>"; };
 		84E1E0EB206E90FB00E67EE1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
+		84EF613E20817C8700A88C55 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		84EF61402081916800A88C55 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		C1D6E4848B8D2AB13870BDB9 /* Pods-Foodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Foodie/Pods-Foodie.release.xcconfig"; sourceTree = "<group>"; };
 		DFE6993715A02032F85C9D39 /* Pods-Foodie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Foodie/Pods-Foodie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,22 +89,36 @@
 			children = (
 				84A9765C206C750400D6809E /* AppDelegate.swift */,
 				84A97662206C750400D6809E /* Main.storyboard */,
+				84393A6F207EB675001679A3 /* PostTableViewCell.swift */,
+				84393A70207EB675001679A3 /* PostTableViewCell.xib */,
+				84393A7620801371001679A3 /* ChangeToHeaderViewController.swift */,
 				8469EFA4207C1D70001AFD80 /* ScanViewController.swift */,
 				8469EFA6207C1E72001AFD80 /* PantryViewController.swift */,
 				84356CE1207B183D00BCFD89 /* SignUpViewController.swift */,
 				848900B7206EDD3500024FCD /* GroceriesViewController.swift */,
-				84E1E0EB206E90FB00E67EE1 /* LoginViewController.swift */,
 				84A9765E206C750400D6809E /* FirstViewController.swift */,
+				84E1E0EB206E90FB00E67EE1 /* LoginViewController.swift */,
 				84A97660206C750400D6809E /* SecondViewController.swift */,
 				84A97674206D5BFD00D6809E /* AddRecipeNameViewController.swift */,
 				84A97676206D687900D6809E /* AddIngredientsViewController.swift */,
 				84A9769A206D935E00D6809E /* AddRecipeViewController.swift */,
 				84A97672206C812400D6809E /* TakePhotoViewController.swift */,
+				84EF613D20817C5300A88C55 /* Models */,
 				84A97667206C750400D6809E /* LaunchScreen.storyboard */,
 				8496F5DB2071625C001E2656 /* GoogleService-Info.plist */,
 			);
 			name = Foodie;
 			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		84EF613D20817C5300A88C55 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84EF613E20817C8700A88C55 /* Post.swift */,
+				84EF61402081916800A88C55 /* UserProfile.swift */,
+			);
+			name = Models;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		87D6576882E2DA1775526A09 /* Pods */ = {
@@ -177,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8496F5DD2071625C001E2656 /* GoogleService-Info.plist in Resources */,
+				84393A72207EB675001679A3 /* PostTableViewCell.xib in Resources */,
 				84A97669206C750400D6809E /* LaunchScreen.storyboard in Resources */,
 				84A97666206C750400D6809E /* Assets.xcassets in Resources */,
 				84A97664206C750400D6809E /* Main.storyboard in Resources */,
@@ -295,13 +320,17 @@
 			files = (
 				84E1E0EC206E90FB00E67EE1 /* LoginViewController.swift in Sources */,
 				84A97661206C750400D6809E /* SecondViewController.swift in Sources */,
+				84393A71207EB675001679A3 /* PostTableViewCell.swift in Sources */,
 				84A9769B206D935E00D6809E /* AddRecipeViewController.swift in Sources */,
 				8469EFA5207C1D70001AFD80 /* ScanViewController.swift in Sources */,
 				84A9765D206C750400D6809E /* AppDelegate.swift in Sources */,
+				84393A7720801371001679A3 /* ChangeToHeaderViewController.swift in Sources */,
 				84356CE2207B183D00BCFD89 /* SignUpViewController.swift in Sources */,
 				8469EFA7207C1E72001AFD80 /* PantryViewController.swift in Sources */,
+				84EF613F20817C8700A88C55 /* Post.swift in Sources */,
 				84A97673206C812400D6809E /* TakePhotoViewController.swift in Sources */,
 				848900B8206EDD3500024FCD /* GroceriesViewController.swift in Sources */,
+				84EF61412081916800A88C55 /* UserProfile.swift in Sources */,
 				84A97677206D687900D6809E /* AddIngredientsViewController.swift in Sources */,
 				84A9765F206C750400D6809E /* FirstViewController.swift in Sources */,
 				84A97675206D5BFD00D6809E /* AddRecipeNameViewController.swift in Sources */,

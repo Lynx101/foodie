@@ -14,7 +14,6 @@ class AddRecipeNameViewController: UIViewController, UITextFieldDelegate {
     
 
     @IBOutlet weak var NextButton: UIBarButtonItem!
-    @IBOutlet weak var RecipeText: UILabel!
     @IBOutlet weak var RecipeTextField: UITextField!
     
     override func viewDidLoad() {
@@ -58,12 +57,25 @@ class AddRecipeNameViewController: UIViewController, UITextFieldDelegate {
     {
         if RecipeTextField.text != ""
         {
+            let postObject = [
+                "Author" : [
+                    "UID" : UserUID,
+                    "Username" : UserName
+
+                ],
+                
+                "Name" : RecipeTextField.text!,
+                "Time Stamp" : [".sv" : "timestamp"]
+            
+            ] as [String : Any]
+            
+            ref.child("Posts").childByAutoId().setValue(postObject)
+            
+            RecipeName = RecipeTextField.text!
+            
             RecipeTextField.resignFirstResponder()
-            RecipeText.text = RecipeTextField.text
             RecipeTextField.text = ""
             NextButton.isEnabled = true
-            
-            RecipeName = RecipeText.text!
         
             return (true)
         }

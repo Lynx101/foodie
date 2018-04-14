@@ -8,11 +8,34 @@
 
 import UIKit
 
-class PantryViewController: UIViewController {
+class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let Cell = TableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostTableViewCell
+        
+        return Cell
+    }
+    
 
+    @IBOutlet weak var TableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        let CellNib = UINib(nibName: "PostTableViewCell", bundle: nil)
+        TableView.register(CellNib, forCellReuseIdentifier: "PostCell")
+        
+        self.TableView.delegate = self
+        self.TableView.dataSource = self
+        
+        TableView.reloadData()
+        
         // Do any additional setup after loading the view.
     }
 
